@@ -1,0 +1,315 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    background-color: #f5f5f5;
+}
+
+header {
+    background: var(--primary-color);
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+    position: relative;
+    animation: fadeIn 1s ease-out; /* Tambahkan animasi fadeIn */
+}
+
+nav {
+    background: #333; /* Latar belakang menu */
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    animation: fadeIn 1s ease-out 1s; /* Delay 1s untuk navigation */
+}
+
+nav ul li {
+    display: inline-block;
+    position: relative;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s ease, background-color 0.3s ease; /* Transisi untuk warna dan latar belakang */
+}
+
+nav ul li ul.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #4CAF50;
+    width: auto;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1024; /* Nilai z-index yang lebih tinggi */
+    top: 100%; /* Atur posisi dropdown dari bagian bawah nav item */
+    left: 0;
+}
+
+nav ul li:hover ul.dropdown-content {
+    display: block;
+}
+
+
+nav ul li ul.dropdown-content li a {
+    color: white;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+
+nav ul li ul.dropdown-content li a:hover {
+    background-color: #555;
+}
+
+nav ul li:hover ul.dropdown-content {
+    display: block;
+}
+
+section {
+    padding: 20px;
+    margin: 20px 0;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+section#contact .social-media {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+section#contact .social-media a {
+    text-decoration: none;
+    color: #4CAF50;
+    font-size: 24px;
+}
+
+section#contact .social-media a:hover {
+    color: #388E3C;
+}
+
+footer {
+    text-align: center;
+    padding: 10px 0;
+    background-color: var(--primary-color);
+    color: white;
+}
+
+article {
+    border: 1px solid #ddd;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 8px;
+}
+
+article img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    display: block;
+    margin: 10px 0;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background: #333;
+    color: white;
+    position: relative;
+    width: 100%;
+    bottom: 0;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+form label {
+    margin: 5px 0;
+}
+
+form input, form textarea, form button {
+    margin: 5px 0;
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+}
+
+form button {
+    background: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+form button:hover {
+    background: #45a049;
+}
+
+/* Responsif */
+@media (max-width: 1024px) {
+    nav ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    section {
+        margin: 10px 0;
+        padding: 15px;
+    }
+}
+/* Transisi untuk link dan tombol */
+nav ul li a, form button {
+    transition: color 0.3s ease, background-color 0.3s ease;
+}
+
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+/* Variasi font */
+h1, h2, h3 {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700;
+}
+
+p, label, input, textarea {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+}
+
+:root {
+    --primary-color: #4CAF50;
+    --secondary-color: #333;
+    --background-color: #f5f5f5;
+    --text-color: #333;
+}
+
+body {
+    background-color: var(--background-color);
+    color: var(--text-color);
+}
+
+header {
+    background: var(--primary-color);
+}
+
+footer {
+    background: var(--secondary-color);
+}
+
+h3 {
+    color: var(--primary-color);
+}
+
+form button {
+    background: var(--primary-color);
+}
+
+form button:hover {
+    background: #45a049;
+}
+
+/* Animasi untuk header */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Animasi untuk elemen yang muncul saat di-scroll */
+.fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+.fade-in.appear {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+#scroll-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    display: none;
+    width: 40px;
+    height: 40px;
+    background-color: #4CAF50;
+    color: white;
+    border-radius: 50%;
+    text-align: center;
+    font-size: 24px;
+    line-height: 40px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    transition: background-color 0.3s ease, transform 0.3s ease, opacity 0.3s ease;
+}
+
+#scroll-to-top:hover {
+    background-color: #45a049;
+}
+
+#scroll-to-top.show {
+    display: block;
+}
+
+.green-bar {
+    height: 5px;
+    background-color: #4CAF50; /* Warna hijau tua */
+    width: 100%; /* Lebar sesuai header */
+    position: absolute; /* Tetap di atas header */
+    top: 0;
+    left: 0;
+    padding-bottom: 0px; /* Menambah padding di bawah bar */
+}
+
+nav ul li a:hover {
+    background-color: #555; /* Warna latar belakang saat hover */
+    color: #fff; /* Warna teks saat hover */
+}
+
+/* Gaya CSS yang sudah Anda miliki */
+
+nav ul li ul.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #4CAF50;
+    width: auto;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1024; /* Nilai z-index yang lebih tinggi */
+    top: 100%; /* Position dropdown from bottom of nav item */
+    left: 0;
+}
+
+nav ul li:hover ul.dropdown-content {
+    display: block;
+}
+
+nav ul li ul.dropdown-content li a {
+    color: white;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+
+nav ul li ul.dropdown-content li a:hover {
+    background-color: #357a38; /* Warna latar belakang saat dihover */
+}
